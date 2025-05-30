@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import * as _ from 'lodash';
-import CampoDisciplinar from '../models/campoDisciplinar.model';
+import CampoDisciplinar from '../models/campoDisciplinar.models';
 
 export class CampoDisciplinarController {
     crearCampoDisciplinar = (req: Request, res: Response) =>  {
