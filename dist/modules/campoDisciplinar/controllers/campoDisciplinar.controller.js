@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CampoDisciplinarController = void 0;
-const campoDisciplinar_model_1 = require("../models/campoDisciplinar.model");
+const campoDisciplinar_models_1 = require("../models/campoDisciplinar.models");
 class CampoDisciplinarController {
     constructor() {
         this.crearCampoDisciplinar = (req, res) => {
-            const nuevaCampoDisciplinar = new campoDisciplinar_model_1.default({
+            const nuevaCampoDisciplinar = new campoDisciplinar_models_1.default({
                 campoDisciplinar: req.body.campoDisciplinar
             });
             nuevaCampoDisciplinar.save()
@@ -25,7 +25,7 @@ class CampoDisciplinarController {
             });
         };
         this.obtenerCampoDisciplinars = (req, res) => {
-            campoDisciplinar_model_1.default.find()
+            campoDisciplinar_models_1.default.find()
                 .then(campoDisciplinars => {
                 res.status(200).json({
                     ok: true,
@@ -41,7 +41,7 @@ class CampoDisciplinarController {
             });
         };
         this.actualizarCampoDisciplinar = (req, res) => {
-            campoDisciplinar_model_1.default.findByIdAndUpdate(req.params.id, {
+            campoDisciplinar_models_1.default.findByIdAndUpdate(req.params.id, {
                 campoDisciplinar: req.body.campoDisciplinar
             })
                 .then(campoDisciplinarActualizada => {
@@ -60,7 +60,7 @@ class CampoDisciplinarController {
             });
         };
         this.eliminarCampoDisciplinar = (req, res) => {
-            campoDisciplinar_model_1.default.findByIdAndDelete(req.params.id)
+            campoDisciplinar_models_1.default.findByIdAndDelete(req.params.id)
                 .then(campoDisciplinarEliminada => {
                 res.status(200).json({
                     ok: true,
